@@ -23,8 +23,10 @@ fun Application.module() {
     )
 
     println("Installing playwright")
+    playwrightMain(arrayOf("install-deps"), playwrightEnv)
+    println("Installed playwright dependencies")
     playwrightMain(arrayOf("install", "chromium"), playwrightEnv)
-    println("Installed playwright")
+    println("Installed chromium")
     Playwright.create(Playwright.CreateOptions().setEnv(playwrightEnv)).use {
         val chrome = it
             .chromium()
