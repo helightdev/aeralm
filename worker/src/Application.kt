@@ -17,7 +17,8 @@ fun Application.module() {
         "jdbc:sqlite:aeralm.db",
     )
 
-    WebDriverManager.chromedriver().setup()
+    WebDriverManager.chromedriver()
+        .setup()
     val driver = ChromeDriver(ChromeOptions().apply {
         addArguments("--headless")
     })

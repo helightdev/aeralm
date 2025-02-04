@@ -14,7 +14,7 @@ dependencies:
   - ch.qos.logback:logback-classic:1.4.14
   - io.ktor:ktor-server-config-yaml:3.0.3
   - io.github.bonigarcia:webdrivermanager:5.8.0
-  - org.seleniumhq.selenium:selenium-java:4.22.0
+  - org.seleniumhq.selenium:selenium-java:4.28.0
   - org.ktorm:ktorm-core:4.1.0
   - org.ktorm:ktorm-support-sqlite:4.1.0
   - org.xerial:sqlite-jdbc:3.46.0.0
