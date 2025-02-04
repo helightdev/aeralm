@@ -1,5 +1,6 @@
 package dev.helight.aeralm
 
+import com.microsoft.playwright.BrowserType
 import com.microsoft.playwright.Playwright
 import com.microsoft.playwright.impl.driver.Driver
 import io.ktor.server.application.*
@@ -30,7 +31,9 @@ fun Application.module() {
     Playwright.create(Playwright.CreateOptions().setEnv(playwrightEnv)).use {
         val chrome = it
             .chromium()
-            .launch()
+            .launch(BrowserType.LaunchOptions()
+                .setEnv(System.getenv() + playwrightEnv)
+                .setHeadless(true))
         val page = chrome.newPage()
         page.waitForLoadState()
         page.navigate("https://html.duckduckgo.com/html?q=Schwarzwald&s=10&kl=de-de")
