@@ -1,0 +1,28 @@
+product:
+  type: jvm/app
+
+
+dependencies:
+  - io.ktor:ktor-server-core:3.0.3
+  - io.ktor:ktor-server-auth:3.0.3
+  - io.ktor:ktor-server-cors:3.0.3
+  - io.ktor:ktor-server-content-negotiation:3.0.3
+  - io.ktor:ktor-server-websockets:3.0.3
+  - io.ktor:ktor-server-double-receive:3.0.3
+  - io.ktor:ktor-serialization-jackson:3.0.3
+  - io.ktor:ktor-server-netty:3.0.3
+  - ch.qos.logback:logback-classic:1.4.14
+  - io.ktor:ktor-server-config-yaml:3.0.3
+  - io.github.bonigarcia:webdrivermanager:5.8.0
+  - org.seleniumhq.selenium:selenium-java:4.22.0
+  - org.ktorm:ktorm-core:4.1.0
+  - org.ktorm:ktorm-support-sqlite:4.1.0
+  - org.xerial:sqlite-jdbc:3.46.0.0
+
+test-dependencies:
+  - io.ktor:ktor-server-test-host:3.0.3
+  - org.jetbrains.kotlin:kotlin-test-junit:2.1.10
+
+settings:
+  jvm:
+    mainClass: dev.helight.aeralm.ApplicationKt
