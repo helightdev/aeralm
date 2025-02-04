@@ -19,10 +19,8 @@ fun Application.module() {
     )
 
     val playwrightEnv = mapOf(
-        "PLAYWRIGHT_BROWSERS_PATH" to File("browsers").absolutePath,
         "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD" to "1"
     )
-
     println("Installing playwright")
     playwrightMain(arrayOf("install-deps"), playwrightEnv)
     println("Installed playwright dependencies")
