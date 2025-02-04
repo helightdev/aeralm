@@ -1,12 +1,10 @@
 package dev.helight.aeralm
 
-import io.github.bonigarcia.wdm.WebDriverManager
-import io.github.bonigarcia.wdm.webdriver.WebDriverCreator
 import io.ktor.server.application.*
 import org.ktorm.database.Database
-import org.ktorm.support.sqlite.SQLiteDialect
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.manager.SeleniumManager
 
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
@@ -16,9 +14,6 @@ fun Application.module() {
     val db = Database.connect(
         "jdbc:sqlite:aeralm.db",
     )
-
-    WebDriverManager.chromedriver()
-        .setup()
     val driver = ChromeDriver(ChromeOptions().apply {
         addArguments("--headless")
     })
