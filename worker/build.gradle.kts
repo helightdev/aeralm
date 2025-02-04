@@ -24,7 +24,6 @@ tasks.register<Exec>("packageApp") {
     }
 
     // Get main class
-    println("Main class: $appMain")
     commandLine(
         "jpackage",
         "--name", appName,
@@ -35,6 +34,4 @@ tasks.register<Exec>("packageApp") {
         "--dest", "${buildDir}/dist",
         *additionalArgs.toTypedArray()
     )
-    println("Packaging application")
-
 }
